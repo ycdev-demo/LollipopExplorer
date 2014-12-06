@@ -1,9 +1,15 @@
 package me.ycdev.android.demo.lollipopdemo;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+
+import me.ycdev.android.demo.lollipopdemo.usage.apps.AppsUsageViewerActivity;
+import me.ycdev.android.demo.lollipopdemo.usage.events.UsageEventsViewerActivity;
 
 
 public class MainActivity extends Activity {
@@ -12,8 +18,31 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        initViews();
     }
 
+    private void startActivity(Class<?> activityClass) {
+        Intent intent = new Intent(this, activityClass);
+        startActivity(intent);
+    }
+
+    private void initViews() {
+        Button appsUsageViewer = (Button) findViewById(R.id.usage_apps_viewer);
+        appsUsageViewer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(AppsUsageViewerActivity.class);
+            }
+        });
+
+        Button usageEventsViewer = (Button) findViewById(R.id.usage_events_viewer);
+        usageEventsViewer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(UsageEventsViewerActivity.class);
+            }
+        });
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

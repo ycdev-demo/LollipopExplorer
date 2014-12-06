@@ -2,7 +2,24 @@
 <resources>
 
     <string name="app_name">LollipopDemo</string>
-    <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
 
+    <string name="action_sort">Sort</string>
+    <string name="action_sort_by_app_name">Sort by app name</string>
+    <string name="action_sort_by_pkg_name">Sort by pkg name</string>
+    <string name="action_sort_by_startup">Sort by startup</string>
+    <string name="action_sort_by_time_used">Sort by time used</string>
+    <string name="action_sort_by_time">Sort by time</string>
+
+    <string name="apps_usage_viewer">Apps usage viewer</string>
+    <string name="apps_usage_timespan">Time span: %1$s ~ %2$s</string>
+    <string name="apps_usage_last_startup">Last startup: %1$s</string>
+    <string name="apps_usage_fg_time_used">Fg time used: %1$ss</string>
+
+    <string name="usage_events_viewer">Usage events viewer</string>
+    <string name="usage_events_type_goto_fg">Type: Go to fg</string>
+    <string name="usage_events_type_goto_bg">Type: Go to bg</string>
+    <string name="usage_events_type_config">Type: Configuration change</string>
+    <string name="usage_events_type_none">Type: None</string>
+    <string name="usage_events_time_stamp">Time stamp: %1$s</string>
 </resources>
