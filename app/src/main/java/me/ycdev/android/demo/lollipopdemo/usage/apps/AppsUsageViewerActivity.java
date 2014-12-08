@@ -18,6 +18,7 @@ import java.util.List;
 import java.util.Map;
 
 import me.ycdev.android.demo.lollipopdemo.R;
+import me.ycdev.android.demo.lollipopdemo.usage.utils.UsageStatsUtils;
 import me.ycdev.android.demo.lollipopdemo.utils.AppLogger;
 import me.ycdev.android.lib.common.utils.DateTimeUtils;
 
@@ -34,7 +35,9 @@ public class AppsUsageViewerActivity extends Activity {
         setContentView(R.layout.apps_usage_viewer);
 
         initViews();
-        new LoadTask().execute();
+        if (!UsageStatsUtils.checkUsageStatsPermission(this)) {
+            UsageStatsUtils.showPermissionDialog(this);
+        }
     }
 
     private void initViews() {
@@ -42,6 +45,14 @@ public class AppsUsageViewerActivity extends Activity {
         mListView = (ListView) findViewById(R.id.list);
         mAdapter = new AppsUsageViewerAdapter(getLayoutInflater());
         mListView.setAdapter(mAdapter);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (UsageStatsUtils.checkUsageStatsPermission(this)) {
+            new LoadTask().execute();
+        }
     }
 
     @Override
@@ -67,6 +78,8 @@ public class AppsUsageViewerActivity extends Activity {
             mAdapter.sort(new AppsUsageItem.FgTimeComparator());
             item.setChecked(true);
             return true;
+        } else if (id == R.id.action_settings) {
+            UsageStatsUtils.launchUsageStatsSettings(this);
         }
 
         return super.onOptionsItemSelected(item);

@@ -9,7 +9,7 @@ import java.io.StringWriter;
  * A wrapper class as logger.
  */
 public class AppLogger {
-    public static final String  TAG = "LollipopDemo";
+    public static final String  TAG = "LollipopExplorer";
 
     private AppLogger() {
         // nothing to do

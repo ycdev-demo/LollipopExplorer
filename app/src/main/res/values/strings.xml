@@ -4,12 +4,20 @@
     <string name="app_name">LollipopDemo</string>
     <string name="action_settings">Settings</string>
 
+    <string name="button_ok">OK</string>
+    <string name="button_cancel">Cancel</string>
+    <string name="button_yes">Yes</string>
+    <string name="button_no">No</string>
+
     <string name="action_sort">Sort</string>
     <string name="action_sort_by_app_name">Sort by app name</string>
     <string name="action_sort_by_pkg_name">Sort by pkg name</string>
     <string name="action_sort_by_startup">Sort by startup</string>
     <string name="action_sort_by_time_used">Sort by time used</string>
     <string name="action_sort_by_time">Sort by time</string>
+
+    <string name="usage_stats_perm_request_title">No permission</string>
+    <string name="usage_stats_perm_request_message">Please grant the permission, do you?</string>
 
     <string name="apps_usage_viewer">Apps usage viewer</string>
     <string name="apps_usage_timespan">Time span: %1$s ~ %2$s</string>
