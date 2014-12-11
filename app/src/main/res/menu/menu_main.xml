@@ -2,6 +2,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".MainActivity">
     <item
+        android:id="@+id/action_notify"
+        android:title="@string/action_notify"
+        android:icon="@android:drawable/ic_menu_send"
+        android:showAsAction="ifRoom" />s
+    <item
         android:id="@+id/action_settings"
         android:title="@string/action_settings"
         android:orderInCategory="100"
